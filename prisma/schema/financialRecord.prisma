@@ -1,0 +1,22 @@
+model FinancialRecord {
+    id String @id @default(uuid())
+
+    amount    Float
+    type      TransactionType
+    category  String
+    date      DateTime        @default(now())
+    notes     String?
+    isDeleted Boolean         @default(false)
+    deletedAt DateTime?
+
+    creatorId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    creator User @relation(fields: [creatorId], references: [id])
+
+    @@index([type], name: "idx_financialData_type")
+    @@index([category], name: "idx_financialData_category")
+    @@index([date], name: "idx_financialData_date")
+}

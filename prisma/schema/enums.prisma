@@ -1,0 +1,15 @@
+enum Role {
+    ADMIN
+    VIEWER
+    ANALYST
+}
+
+enum UserStatus {
+    ACTIVE
+    INACTIVE
+}
+
+enum TransactionType {
+    INCOME
+    EXPENSE
+}
