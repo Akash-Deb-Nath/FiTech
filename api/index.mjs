@@ -812,7 +812,7 @@ router2.put(
   authMiddleware(Role.ADMIN),
   UserController.updateUser
 );
-router2.delete(
+router2.patch(
   "/:id",
   authMiddleware(Role.ADMIN),
   apiLimiter,
@@ -1062,8 +1062,8 @@ router3.put(
   apiLimiter,
   RecordController.updateRecord
 );
-router3.delete(
-  "/",
+router3.patch(
+  "/:id",
   authMiddleware(Role.ADMIN),
   apiLimiter,
   RecordController.deleteRecord
@@ -1217,7 +1217,7 @@ var DashboardRoutes = router4;
 var router5 = Router5();
 router5.use("/auth", AuthRoutes);
 router5.use("/users", UserRoutes);
-router5.use("/record", RecordRoutes);
+router5.use("/records", RecordRoutes);
 router5.use("/dashboard", DashboardRoutes);
 var IndexRoutes = router5;
 

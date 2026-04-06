@@ -6,7 +6,7 @@ A backend system to manage financial records (income & expenses) with role-based
 
 ---
 
-** Live Link: https://y-khaki-one.vercel.app/ **
+Live Link: https://y-khaki-one.vercel.app/
 
 ---
 
