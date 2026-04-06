@@ -31,8 +31,8 @@ router.put(
   apiLimiter,
   RecordController.updateRecord,
 );
-router.delete(
-  "/",
+router.patch(
+  "/:id",
   authMiddleware(Role.ADMIN),
   apiLimiter,
   RecordController.deleteRecord,

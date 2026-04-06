@@ -8,7 +8,7 @@ const router = Router();
 
 router.use("/auth", AuthRoutes);
 router.use("/users", UserRoutes);
-router.use("/record", RecordRoutes);
+router.use("/records", RecordRoutes);
 router.use("/dashboard", DashboardRoutes);
 
 export const IndexRoutes = router;

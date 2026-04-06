@@ -27,7 +27,7 @@ router.put(
   authMiddleware(Role.ADMIN),
   UserController.updateUser,
 );
-router.delete(
+router.patch(
   "/:id",
   authMiddleware(Role.ADMIN),
   apiLimiter,
