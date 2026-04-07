@@ -72,9 +72,9 @@ It focuses on:
 | Method | Endpoint                        | Access         | Description                 |
 | ------ | ------------------------------- | -------------- | --------------------------  |
 | GET    | /api/v1/dashboard/summary       | All            | Get summary of records      |
-| GET    | /api/v1/dashboard/category-wise | All            | Get category wise dashboard |
-| GET    | /api/v1/dashboard/recent        | ALL            | Get recet record            |
-| GET    | /api/v1/dashboard/period        | All            | Get period wise dashboard   |
+| GET    | /api/v1/dashboard/category-wise | All            | Get category wise records   |
+| GET    | /api/v1/dashboard/recent        | All            | Get recet record            |
+| GET    | /api/v1/dashboard/period        | All            | Get period wise records     |
 
 ---
 
@@ -124,25 +124,7 @@ It focuses on:
 ```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
-npm install
-
-```
-
-
----
-
-## 👥 Roles & Permissions
-
-### 👤 Viewer
-- Manage own financial records
-- View dashboard
-
-### 📊 Analyst (Optional)
-- View aggregated data
-
-### 🛡 Admin
-- Manage users
-- Access all data
+npm install```
 
 ---
 
