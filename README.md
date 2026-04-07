@@ -58,34 +58,34 @@ It focuses on:
 
 ## 💰 Financial Records
 
-| Method | Endpoint            | Description      |
-| ------ | ------------------- | ---------------- |
-| POST   | /api/v1/records     | Create record    |
-| GET    | /api/v1/records     | Get user records |
-| PUT    | /api/v1/records/:id | Update record    |
-| PATCH  | /api/v1/records/:id | Delete record    |
+| Method | Endpoint            | Access        | Description                |
+| ------ | ------------------- |-------------- |--------------------------- |
+| POST   | /api/v1/records     |Admin          |Create record               |
+| GET    | /api/v1/records     |Admin, Analyst |Get user records            |
+| PUT    | /api/v1/records/:id |Admin          |Update record               |
+| PATCH  | /api/v1/records/:id |Admin          |Delete record (soft delete) |
 
 ---
 
 ## 💰 Dashboard APIs
 
-| Method | Endpoint                        | Access         | Description   |
-| ------ | ------------------------------- | -------------- | ------------- |
-| GET    | /api/v1/dashboard/summary       | Admin          | Create record |
-| GET    | /api/v1/dashboard/category-wise | Admin, Analyst | Get dashboard |
-| GET    | /api/v1/dashboard/recent        | Admin          | Update record |
-| GET    | /api/v1/dashboard/period        | Admin          | Delete record |
+| Method | Endpoint                        | Access         | Description                 |
+| ------ | ------------------------------- | -------------- | --------------------------  |
+| GET    | /api/v1/dashboard/summary       | All            | Get summary of records      |
+| GET    | /api/v1/dashboard/category-wise | All            | Get category wise dashboard |
+| GET    | /api/v1/dashboard/recent        | ALL            | Get recet record            |
+| GET    | /api/v1/dashboard/period        | All            | Get period wise dashboard   |
 
 ---
 
 ## 👥 User Management APIs (Admin Only)
 
-| Method | Endpoint          | Description    |
-| ------ | ----------------- | -------------- |
-| GET    | /api/v1/users     | Get all users  |
-| GET    | /api/v1/users/:id | Get user by ID |
-| PUT    | /api/v1/users/:id | Update user    |
-| PATCH  | /api/v1/users/:id | Delete user    |
+| Method | Endpoint          | Access | Description   |
+| ------ | ----------------- | ------ |-------------- |
+| GET    | /api/v1/users     | Admin  |Get all users  |
+| GET    | /api/v1/users/:id | Admin  |Get user by ID |
+| PUT    | /api/v1/users/:id | Admin  |Update user    |
+| PATCH  | /api/v1/users/:id | Admin  |Delete user    |
 
 ---
 
