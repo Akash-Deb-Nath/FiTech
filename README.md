@@ -121,10 +121,12 @@ It focuses on:
 
 ## ⚙️ Setup
 
-````bash
+```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 npm install
+
+```
 
 
 ---
@@ -144,14 +146,6 @@ npm install
 
 ---
 
-## ⚙️ Setup
-
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-npm install
-````
-
-DATABASE_URL=your_db_url
-PORT=5000
-SESSION_SECRET=your_secret
+- DATABASE_URL = your_db_url
+- PORT = 5000
+- SESSION_SECRET = your_secret
