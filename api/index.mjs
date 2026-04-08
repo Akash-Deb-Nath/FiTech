@@ -217,19 +217,6 @@ var auth = betterAuth({
     provider: "postgresql"
     // or "mysql", "postgresql", ...etc
   }),
-  session: {
-    cookieCache: {
-      enabled: true,
-      maxAge: 5 * 60
-      // 5 minutes
-    },
-    cookieOptions: {
-      sameSite: "none",
-      // cross-domain
-      secure: false
-      // only HTTPS
-    }
-  },
   emailAndPassword: {
     enabled: true
   },
@@ -260,17 +247,17 @@ var auth = betterAuth({
         required: false,
         defaultValue: null
       }
-    },
-    session: {
-      expiresIn: 60 * 60 * 60 * 24,
+    }
+  },
+  session: {
+    expiresIn: 60 * 60 * 60 * 24,
+    // 1 day in seconds
+    updateAge: 60 * 60 * 60 * 24,
+    // 1 day in seconds
+    cookieCache: {
+      enabled: true,
+      maxAge: 60 * 60 * 60 * 24
       // 1 day in seconds
-      updateAge: 60 * 60 * 60 * 24,
-      // 1 day in seconds
-      cookieCache: {
-        enabled: true,
-        maxAge: 60 * 60 * 60 * 24
-        // 1 day in seconds
-      }
     }
   },
   trustedOrigins: [envVars.BETTER_AUTH_URL || "http://localhost:5000"],

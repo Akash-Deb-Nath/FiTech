@@ -58,34 +58,34 @@ It focuses on:
 
 ## 💰 Financial Records
 
-| Method | Endpoint            | Access        | Description                |
-| ------ | ------------------- |-------------- |--------------------------- |
-| POST   | /api/v1/records     |Admin          |Create record               |
-| GET    | /api/v1/records     |Admin, Analyst |Get user records            |
-| PUT    | /api/v1/records/:id |Admin          |Update record               |
-| PATCH  | /api/v1/records/:id |Admin          |Delete record (soft delete) |
+| Method | Endpoint            | Access         | Description                 |
+| ------ | ------------------- | -------------- | --------------------------- |
+| POST   | /api/v1/records     | Admin          | Create record               |
+| GET    | /api/v1/records     | Admin, Analyst | Get user records            |
+| PUT    | /api/v1/records/:id | Admin          | Update record               |
+| PATCH  | /api/v1/records/:id | Admin          | Delete record (soft delete) |
 
 ---
 
 ## 💰 Dashboard APIs
 
-| Method | Endpoint                        | Access         | Description                 |
-| ------ | ------------------------------- | -------------- | --------------------------  |
-| GET    | /api/v1/dashboard/summary       | All            | Get summary of records      |
-| GET    | /api/v1/dashboard/category-wise | All            | Get category wise records   |
-| GET    | /api/v1/dashboard/recent        | All            | Get recet record            |
-| GET    | /api/v1/dashboard/period        | All            | Get period wise records     |
+| Method | Endpoint                        | Access | Description               |
+| ------ | ------------------------------- | ------ | ------------------------- |
+| GET    | /api/v1/dashboard/summary       | All    | Get summary of records    |
+| GET    | /api/v1/dashboard/category-wise | All    | Get category wise records |
+| GET    | /api/v1/dashboard/recent        | All    | Get recet record          |
+| GET    | /api/v1/dashboard/period        | All    | Get period wise records   |
 
 ---
 
 ## 👥 User Management APIs (Admin Only)
 
-| Method | Endpoint          | Access | Description   |
-| ------ | ----------------- | ------ |-------------- |
-| GET    | /api/v1/users     | Admin  |Get all users  |
-| GET    | /api/v1/users/:id | Admin  |Get user by ID |
-| PUT    | /api/v1/users/:id | Admin  |Update user    |
-| PATCH  | /api/v1/users/:id | Admin  |Delete user    |
+| Method | Endpoint          | Access | Description    |
+| ------ | ----------------- | ------ | -------------- |
+| GET    | /api/v1/users     | Admin  | Get all users  |
+| GET    | /api/v1/users/:id | Admin  | Get user by ID |
+| PUT    | /api/v1/users/:id | Admin  | Update user    |
+| PATCH  | /api/v1/users/:id | Admin  | Delete user    |
 
 ---
 
@@ -107,6 +107,12 @@ It focuses on:
 - Full access
 - Manage users
 - Create, update, delete records
+
+## Admin credentianls (seeded):
+
+- email : admin@admin.com
+- password: Admin12345
+
 
 ---
 
