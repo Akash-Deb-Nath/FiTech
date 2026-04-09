@@ -1126,6 +1126,10 @@ var DashboardService = {
   getTrends
 };
 
+// src/app/module/dashboard/dashboard.validation.ts
+import { z as z4 } from "zod";
+var periodSchema = z4.enum(["month", "week"]);
+
 // src/app/module/dashboard/dashboard.controller.ts
 var getDashboardSummary2 = catchAsync(async (req, res) => {
   const result = await DashboardService.getDashboardSummary();
@@ -1146,7 +1150,7 @@ var getCategoryTotals2 = catchAsync(async (req, res) => {
   });
 });
 var getRecentActivity2 = catchAsync(async (req, res) => {
-  const limit = Number(req.body.limit);
+  const limit = Number(req.query.limit) || 10;
   const result = await DashboardService.getRecentActivity(limit);
   sendResponse(res, {
     httpStatusCode: status7.OK,
@@ -1156,8 +1160,8 @@ var getRecentActivity2 = catchAsync(async (req, res) => {
   });
 });
 var getTrends2 = catchAsync(async (req, res) => {
-  const period = req.body.limit;
-  const result = await DashboardService.getRecentActivity(period);
+  const period = periodSchema.parse(req.query.period ?? "month");
+  const result = await DashboardService.getTrends(period);
   sendResponse(res, {
     httpStatusCode: status7.OK,
     success: true,
@@ -1184,19 +1188,19 @@ router4.get(
   "/category-wise",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary
+  DashboardController.getCategoryTotals
 );
 router4.get(
   "/recent",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary
+  DashboardController.getRecentActivity
 );
 router4.get(
   "/period",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary
+  DashboardController.getTrends
 );
 var DashboardRoutes = router4;
 
