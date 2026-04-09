@@ -95,7 +95,7 @@ It focuses on:
 | GET    | /api/v1/dashboard/summary       | All    | Get summary of records    |
 | GET    | /api/v1/dashboard/category-wise | All    | Get category wise records |
 | GET    | /api/v1/dashboard/recent        | All    | Get recent record         |
-| GET    | /api/v1/dashboard/period        | All    | Get weekly wise records   |
+| GET    | /api/v1/dashboard/period        | All    | Get period wise records   |
 
 ---
 
