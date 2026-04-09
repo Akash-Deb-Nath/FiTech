@@ -64,6 +64,14 @@ It focuses on:
 
 ---
 
+### 📄 API Documentation
+
+- Full Postman / API docs for this project can be accessed here:
+
+🔗 [View API Docs](https://documenter.getpostman.com/view/15110840/2sBXitBS4a)
+
+---
+
 ### Example Endpoint
 
 ---
