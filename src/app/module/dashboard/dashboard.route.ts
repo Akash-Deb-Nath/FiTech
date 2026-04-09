@@ -15,19 +15,19 @@ router.get(
   "/category-wise",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary,
+  DashboardController.getCategoryTotals,
 );
 router.get(
   "/recent",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary,
+  DashboardController.getRecentActivity,
 );
 router.get(
   "/period",
   authMiddleware(),
   apiLimiter,
-  DashboardController.getDashboardSummary,
+  DashboardController.getTrends,
 );
 
 export const DashboardRoutes = router;

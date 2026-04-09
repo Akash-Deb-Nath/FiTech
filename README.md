@@ -24,14 +24,37 @@ It focuses on:
 
 ## ✨ Features
 
-- 🔐 Authentication & Authorization (Role-Based)
-- 💰 Income & Expense Management
-- 📊 Dashboard Summary APIs
-- 📈 Trends (Monthly / Weekly)
-- 🧾 Category-wise Aggregation
-- ⚡ Optimized Queries with Prisma
+### 🔐 Authentication & Authorization
 
----
+- Better Auth (session-based authentication)
+- JWT-based authorization for protected routes
+- Role-based access control (Admin, Analyst, Viewer)
+
+### 💰 Financial Management
+
+- Income & Expense tracking
+- Soft delete support
+- Secure role-restricted operations
+
+### 📊 Analytics & Dashboard
+
+- Summary aggregation
+- Category-wise insights
+- Monthly & weekly trends
+- Recent transaction tracking
+
+### ⚡ Performance & Security
+
+- Optimized queries using Prisma
+- Rate limiting (login & API protection)
+- Zod validation for request safety
+- Global error handling
+
+### 🛡 System Design
+
+- Modular architecture
+- Scalable query handling
+- Clean separation of concerns
 
 ## 🛠 Tech Stack
 
@@ -73,8 +96,8 @@ It focuses on:
 | ------ | ------------------------------- | ------ | ------------------------- |
 | GET    | /api/v1/dashboard/summary       | All    | Get summary of records    |
 | GET    | /api/v1/dashboard/category-wise | All    | Get category wise records |
-| GET    | /api/v1/dashboard/recent        | All    | Get recet record          |
-| GET    | /api/v1/dashboard/period        | All    | Get period wise records   |
+| GET    | /api/v1/dashboard/recent        | All    | Get recnet record          |
+| GET    | /api/v1/dashboard/period        | All    | Get weekly wise records   |
 
 ---
 
@@ -108,11 +131,12 @@ It focuses on:
 - Manage users
 - Create, update, delete records
 
-## Admin credentianls (seeded):
+## 🔑 Admin Credentials (Seeded)
 
-- email : admin@admin.com
-- password: Admin12345
+> Public admin registration is disabled for security reasons.
 
+- **Email:** admin@admin.com
+- **Password:** Admin12345
 
 ---
 
@@ -128,14 +152,16 @@ It focuses on:
 ## ⚙️ Setup
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/akash-deb-nath/FiTech.git
+cd FiTech
 npm install
 
 ```
 
 ---
 
-- DATABASE_URL = your_db_url
-- PORT = 5000
-- SESSION_SECRET = your_secret
+## ⚙️ Environment Variables
+
+Create a `.env` file based on `.env.example`:
+
+

@@ -3,6 +3,7 @@ import { catchAsync } from "../../shared/catchAsync";
 import { sendResponse } from "../../shared/sendResponse";
 import status from "http-status";
 import { DashboardService } from "./dashboard.service";
+import { periodSchema } from "./dashboard.validation";
 
 const getDashboardSummary = catchAsync(async (req: Request, res: Response) => {
   const result = await DashboardService.getDashboardSummary();
@@ -25,7 +26,7 @@ const getCategoryTotals = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getRecentActivity = catchAsync(async (req: Request, res: Response) => {
-  const limit: number = Number(req.body.limit);
+  const limit: number = Number(req.query.limit) || 10;
   const result = await DashboardService.getRecentActivity(limit);
   sendResponse(res, {
     httpStatusCode: status.OK,
@@ -36,8 +37,8 @@ const getRecentActivity = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getTrends = catchAsync(async (req: Request, res: Response) => {
-  const period = req.body.limit;
-  const result = await DashboardService.getRecentActivity(period);
+const period = periodSchema.parse(req.query.period ?? "month");
+  const result = await DashboardService.getTrends(period);
   sendResponse(res, {
     httpStatusCode: status.OK,
     success: true,
