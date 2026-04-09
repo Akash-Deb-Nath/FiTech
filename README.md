@@ -2,7 +2,7 @@
 
 ### Role-Based Backend with Dashboard Analytics
 
-A backend system to manage financial records (income & expenses) with role-based access and advanced dashboard summary APIs.
+A robust backend system built with Express.js, PostgreSQL, and Prisma to manage financial records (income & expenses) with granular Role-Based Access Control (RBAC) and real-time dashboard analytics.
 
 ---
 
@@ -24,45 +24,43 @@ It focuses on:
 
 ## ✨ Features
 
-### 🔐 Authentication & Authorization
+### 🔐 Security & Access Control
 
-- Better Auth (session-based authentication)
-- JWT-based authorization for protected routes
-- Role-based access control (Admin, Analyst, Viewer)
+- RBAC (Admin, Analyst, Viewer): Strict access control based on user roles.
 
-### 💰 Financial Management
+- Better Auth & JWT: Secure session management and stateless authorization.
 
-- Income & Expense tracking
-- Soft delete support
-- Secure role-restricted operations
+- Rate Limiting: Protects against brute-force attacks on login and API endpoints.
 
-### 📊 Analytics & Dashboard
+- Admin Seeding: Public admin registration is disabled; access is managed via secure seeding.
 
-- Summary aggregation
-- Category-wise insights
-- Monthly & weekly trends
-- Recent transaction tracking
+### 💰 Financial & Analytics
 
-### ⚡ Performance & Security
+- Record Management: Full CRUD for income/expenses with Soft Delete support.
 
-- Optimized queries using Prisma
-- Rate limiting (login & API protection)
-- Zod validation for request safety
-- Global error handling
+- Advanced Aggregations: Prisma-optimized queries for category-wise insights, monthly/weekly trends, and summaries.
 
-### 🛡 System Design
+- Zod Validation: Type-safe request validation for all incoming data.
 
-- Modular architecture
-- Scalable query handling
-- Clean separation of concerns
+### 🛡 System Architecture
 
-## 🛠 Tech Stack
+- Modular Design: Clean separation of concerns (Controllers, Services, Middlewares).
 
-- Node.js
-- Express.js
-- PostgreSQL
-- Prisma ORM
-- Zod (Validation)
+- Global Error Handling: Consistent API response structure for all error types.
+
+### 🛠 Tech Stack
+
+- Runtime: Node.js
+
+- Framework: Express.js
+
+- Database: PostgreSQL
+
+- ORM: Prisma
+
+- Validation: Zod
+
+- Auth: Better Auth / JWT
 
 ---
 
@@ -96,7 +94,7 @@ It focuses on:
 | ------ | ------------------------------- | ------ | ------------------------- |
 | GET    | /api/v1/dashboard/summary       | All    | Get summary of records    |
 | GET    | /api/v1/dashboard/category-wise | All    | Get category wise records |
-| GET    | /api/v1/dashboard/recent        | All    | Get recnet record          |
+| GET    | /api/v1/dashboard/recent        | All    | Get recent record         |
 | GET    | /api/v1/dashboard/period        | All    | Get weekly wise records   |
 
 ---
@@ -116,20 +114,12 @@ It focuses on:
 
 ## 🔐 Roles & Permissions
 
-### 👤 Viewer
-
-- Can view dashboard summary only
-
-### 📊 Analyst
-
-- Can view records
-- Can access insights
-
-### 🛡 Admin
-
-- Full access
-- Manage users
-- Create, update, delete records
+| Feature               | Viewer | Analyst | Admin |
+| --------------------- | :----: | :-----: | :---: |
+| View Dashboard        |   ✅   |   ✅    |  ✅   |
+| View Detailed Records |   ❌   |   ✅    |  ✅   |
+| Create/Edit Records   |   ❌   |   ❌    |  ✅   |
+| Manage Users          |   ❌   |   ❌    |  ✅   |
 
 ## 🔑 Admin Credentials (Seeded)
 
@@ -163,5 +153,3 @@ npm install
 ## ⚙️ Environment Variables
 
 Create a `.env` file based on `.env.example`:
-
-
