@@ -4,12 +4,12 @@ import { prisma } from "../../lib/prisma";
 const getDashboardSummary = async () => {
   const income = await prisma.financialRecord.aggregate({
     _sum: { amount: true },
-    where: { type: TransactionType.INCOME },
+    where: { type: TransactionType.INCOME, isDeleted: false },
   });
 
   const expenses = await prisma.financialRecord.aggregate({
     _sum: { amount: true },
-    where: { type: TransactionType.EXPENSE },
+    where: { type: TransactionType.EXPENSE, isDeleted: false },
   });
 
   const netBalance = (income._sum.amount || 0) - (expenses._sum.amount || 0);
@@ -24,6 +24,9 @@ const getDashboardSummary = async () => {
 const getCategoryTotals = async () => {
   const categories = await prisma.financialRecord.groupBy({
     by: ["category"],
+    where: {
+      isDeleted: false,
+    },
     _sum: { amount: true },
   });
 
@@ -35,6 +38,9 @@ const getCategoryTotals = async () => {
 
 const getRecentActivity = async (limit: number = 10) => {
   const recent = await prisma.financialRecord.findMany({
+    where: {
+      isDeleted: false,
+    },
     orderBy: { date: "desc" },
     take: limit,
   });
@@ -44,6 +50,9 @@ const getRecentActivity = async (limit: number = 10) => {
 
 const getTrends = async (period: "month" | "week" = "month") => {
   const records = await prisma.financialRecord.findMany({
+    where: {
+      isDeleted: false,
+    },
     orderBy: { date: "asc" },
   });
 
